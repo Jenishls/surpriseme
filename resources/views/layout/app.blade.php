@@ -44,20 +44,7 @@
 
  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.js"></script>
  <script src="https://use.fontawesome.com/85bd2382ad.js"></script>
+ <script src="js/style.js"></script>
  
-  <script type="text/javascript">
-  $(document).on('ready', function() {
-     
-    $('.autoplay').slick({
-      slidesToShow: 4,
-      slidesToScroll: 1,
-      autoplay: true,
-      autoplaySpeed: 2000,
-    });
-
-    });
-
-  </script>
-  
   </body>
 </html>

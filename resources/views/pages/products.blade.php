@@ -88,34 +88,7 @@
     <div class="container" style="margin: 10px; color: #f60">
       <h3><strong>Related Products</strong></h3>
     </div>  
-        <div class="autoplay slider">
-          <div >
-            <img src="images/9bf0f5d145bf75e764aea02ded1d2b43.jpg" >
-          </div>
-          <div >
-            <img src="images/allie-milot-442914.jpg" >
-          </div>
-              <div>
-            <img src="images/ben-white-128604.jpg">
-          </div>
-          <div>
-            <img src="images/2.jpg" >
-          </div>
-           <div>
-            <img src="images/3.jpg">
-          </div>
-          <div>
-            <img src="images/8.jpg" >
-          </div>
-          <div>
-            <img src="images/men.jpeg" >
-          </div>
-          <div >
-            <img src="images/women.jpeg">
-          </div>
-       
-      
-        </div>
+       @include('inc.slider')
     </div>
   
   <p><br></p>
@@ -139,6 +112,6 @@
     <h3>Reviews</h3>
     <p>Reading is easier, too, in the new Reading view. You can collapse parts of the document and focus on the text you want. If you need to stop reading before you reach the end, Word remembers where you left off - even on another device.</p> 
   </div>
-  
+  <p><br/></p>
 
 @endsection
