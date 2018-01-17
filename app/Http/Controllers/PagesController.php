@@ -20,9 +20,9 @@ class PagesController extends Controller
         return view('pages.category');
     }
 
-    public function products()
+    public function product()
     {
-        return view('pages.products');
+        return view('pages.product');
     }
 
 }

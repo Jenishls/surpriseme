@@ -12,6 +12,8 @@
 */
 
 Route::get('/','PagesController@index' );
-Route::get('/products','PagesController@products' );
+Route::get('/product','PagesController@product' );
 Route::get('/category','PagesController@category' );
 // Route::get('/','PagesController@index' );
+
+Route::resource('product','ProductController');

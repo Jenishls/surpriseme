@@ -16,35 +16,7 @@
   <h4 style="color:orange"><strong>NEW ARRIVALS</strong></h4>
 </DIV>
     <div class="container showcase" style="background-color:#ccc" >
-
-      <div class="autoplay slider">
-        {{--  <div >
-          <img src="{{ URL::to('/assets/images/men.jpeg') }}" >
-        </div>  --}}
-        <div >
-          <img src="images/allie-milot-442914.jpg" >
-        </div>
-            <div>
-          <img src="images/ben-white-128604.jpg">
-        </div>
-        <div>
-          <img src="images/2.jpg" >
-        </div>
-         <div>
-          <img src="images/3.jpg">
-        </div>
-        <div>
-          <img src="images/8.jpg" >
-        </div>
-        <div>
-          <img src="images/men.jpeg" >
-        </div>
-        <div >
-          <img src="images/women.jpeg">
-        </div>
-     
-    
-      </div>
+@include('inc.slider')
   </div>
 
 
@@ -54,11 +26,13 @@
 <div class="container" style="margin-top:50px; ">
   <div class="row">
   	<div class="col-md-6 ">
-  		<img src="images/women.jpeg" class="img-responsive" style="height:100%; width:100%">
+        <a href="/category">
+          <img src="images/women.jpeg" class="img-responsive" style="height:100%; width:100%">
+        </a>
   	</div>
 
   	<div class="col-md-6 ">
-      <a href="category.html">
+      <a href="/category">
   		<img src="images/men.jpeg" class="img-responsive" style="height:100%; width:100%">
       </a>
   		</div>
@@ -68,11 +42,14 @@
 
   	<div class="row">
       <div class="col-md-8  ">
-  		<img src="images/children-06.jpg" style="width:100%; height:100%">
+          <a href="/category">
+            <img src="images/children-06.jpg" style="width:100%; height:100%">
+          </a>
       </div>
       <div class="col-md-4"  >
-         <img src="images/more.jpg" class="img-responsive" style="width:100%; height:100%"> 
-     
+        <a href="/category">
+          <img src="images/more.jpg" class="img-responsive" style="width:100%; height:100%"> 
+        </a>  
       </div>
 
   	</div>
@@ -100,7 +77,7 @@
             <p>
               <a href="#" class="btn btn-sm btn-surprise" role="button"><i class="fa fa-shopping-cart"></i></a>
 
-              <a href="product.html" class="btn btn-sm btn-surprise" role="button">View</a>
+              <a href="/product" class="btn btn-sm btn-surprise" role="button">View</a>
             
               <a href="#" class="btn btn-sm btn-surprise" role="button"><i class="fa fa-heart"></i></a>
             </p>
@@ -116,7 +93,13 @@
             <p class="card-text container">Some quick example text to </p>
           </div>
           <div class="text-center">
-           <p> <a href="#" class="btn btn-sm btn-surprise" role="button">View</a></p>
+            <p>
+              <a href="#" class="btn btn-sm btn-surprise" role="button"><i class="fa fa-shopping-cart"></i></a>
+    
+              <a href="/product" class="btn btn-sm btn-surprise" role="button">View</a>
+               
+              <a href="#" class="btn btn-sm btn-surprise" role="button"><i class="fa fa-heart"></i></a>
+            </p>
          </div>
         </div>
     </div>
@@ -129,7 +112,13 @@
           </div>
 
          <div class="text-center">
-           <p> <a href="#" class="btn btn-sm btn-surprise" role="button">View</a></p>
+            <p>
+                <a href="#" class="btn btn-sm btn-surprise" role="button"><i class="fa fa-shopping-cart"></i></a>
+  
+                <a href="/product" class="btn btn-sm btn-surprise" role="button">View</a>
+              
+                <a href="#" class="btn btn-sm btn-surprise" role="button"><i class="fa fa-heart"></i></a>
+              </p>
          </div>
           
         </div>
@@ -144,13 +133,20 @@
           </div>
 
          <div class="text-center">
-           <p> <a href="#" class="btn btn-sm btn-surprise" role="button">View</a></p>
+            <p>
+                <a href="#" class="btn btn-sm btn-surprise" role="button"><i class="fa fa-shopping-cart"></i></a>
+  
+                <a href="/product" class="btn btn-sm btn-surprise" role="button">View</a>
+              
+                <a href="#" class="btn btn-sm btn-surprise" role="button"><i class="fa fa-heart"></i></a>
+              </p>
          </div>
           
         </div>
        
     </div>
 </div>
+
 <div class="row">
     <div class="col-lg-3 col-md-1  product">
         <div class="card">
