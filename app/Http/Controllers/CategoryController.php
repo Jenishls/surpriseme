@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Category;
 
-class ProductController extends Controller
+class CategoryController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +14,8 @@ class ProductController extends Controller
      */
     public function index()
     {
-        
+        $category = Category::all();
+        return view('category.index')->with('category', $category);
     }
 
     /**

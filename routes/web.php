@@ -13,7 +13,8 @@
 
 Route::get('/','PagesController@index' );
 Route::get('/product','PagesController@product' );
-Route::get('/category','PagesController@category' );
+
 // Route::get('/','PagesController@index' );
 
 Route::resource('product','ProductController');
+Route::resource('category','CategoryController');
