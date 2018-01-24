@@ -13,7 +13,8 @@ class ProductController extends Controller
      */
     public function index()
     {
-        
+        $women="sdfsdfsdf";
+        return view('pages.product')->with('women', $women);
     }
 
     /**

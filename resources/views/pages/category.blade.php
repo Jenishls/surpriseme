@@ -4,7 +4,7 @@
 <div class="container-fluid ">
     <div class="row" style="background-color: #e9ecef" >
       <div class="col-sm-3 " >
-       <h2 style="line-height: 2em"> Mens</h2>
+       <h2 style="line-height: 2em">MEN</h2>
       </div>
       <div class="col-sm-2" >
         

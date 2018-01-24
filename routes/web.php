@@ -14,7 +14,14 @@
 Route::get('/','PagesController@index' );
 Route::get('/product','PagesController@product' );
 
-// Route::get('/','PagesController@index' );
+Route::get('category/{category_name?}',[
+    'uses' => 'CategoryController@index',
+    'as' =>'category' ]);
 
+Route::get('/categories','PagesController@category' );
+
+Route::resource('/', 'IndexController');
 Route::resource('product','ProductController');
+
+
 Route::resource('category','CategoryController');

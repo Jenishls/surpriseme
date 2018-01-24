@@ -35,7 +35,20 @@
   <h4 style="color:orange"><strong>NEW ARRIVALS</strong></h4>
 </DIV>
     <div class="container showcase" style="background-color:#ccc" >
-@include('inc.slider')
+
+
+      {{--  @include('inc.slider',$products)  --}}
+
+      <div class="autoplay slider">
+        @if(count($products) > 0)
+          @foreach($products as $foo)
+          <div>
+            <img src="images/{{$foo['Image']}}" >
+          </div>
+          @endforeach 
+          @endif
+      </div>
+
   </div>
 
 <div class="container-fluid">
@@ -115,19 +128,8 @@
     @endforeach
     @endif
 
-      
-     
-
-
- 
 </div>
 
-
- 
-  
 </div>
-
-
-
-    </div> <!-- /container -->
+</div> <!-- /container -->
     @endsection
