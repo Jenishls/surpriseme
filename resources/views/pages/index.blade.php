@@ -102,18 +102,79 @@
     
   </h2>
  
-    <div class="row">
-      @if(count($products)>0)
-      
+    <div class="row text-center">
+        @if(count($products)>0)
+              
         @foreach($products as $product)
         
       
       <div class="col-lg-3 col-md-1 product">
         <div class="card">
-          <img class="card-img-top" src="images/{{$product['Image']}}" alt="images/{{$product['Image']}}">
-          <div class="card-block" style=" height: 80px; ">
-            <p class="card-text container">{{$product['Name']}}</p>
+          <img class="card-img-top" src="{{ asset('images/'.$product->Image) }}" alt="images/{{$product['Image']}}">
+          <div class="card-block" style=" height: 100px; ">
+            <div style="height : 40px;">
+              {{$product['Name']}} 
+              
+            </div>   
+            <small class="card-text container" style="color:orange">
+              
+              
+              
+              @if($product['Review'] === 1)
+              
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-o"></i>
+                <i class="fa fa-star-o"></i>
+                <i class="fa fa-star-o"></i>
+                <i class="fa fa-star-o"></i>
+              
+              @elseif($product['Review'] === 2)
+              
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-o"></i>
+                <i class="fa fa-star-o"></i>
+                <i class="fa fa-star-o"></i>
+              
+              @elseif($product['Review'] === 3)
+              
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-o"></i>
+                <i class="fa fa-star-o"></i>
+              
+              @elseif($product['Review'] === 4)
+              
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-o"></i>
+              
+              @else
+              
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+              
+              @endif
+              
+            </small><br>
+            <small class="card-text container">
+              @if($product['Discount'] > 0)
+              <strike><i class="fa fa-inr"></i> {{$product['Price']}}</strike> 
+              &nbsp;
+              New Price : 
+              <i class="fa fa-inr"></i> {{$product['Price']-($product['Price'] * $product['Discount']/100)}}
+              @else
+              <i class="fa fa-inr"></i> {{$product['Price']}}
+              @endif
+            </small>
           </div>
+          
           <div class="text-center">
             <p>
               <a href="#" class="btn btn-sm btn-surprise" role="button"><i class="fa fa-shopping-cart"></i></a>

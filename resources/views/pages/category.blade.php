@@ -178,8 +178,10 @@
                 <div class="card">
                   <img class="card-img-top" src="{{ asset('images/'.$product->Image) }}" alt="images/{{$product['Image']}}">
                   <div class="card-block" style=" height: 100px; ">
-                      {{$product['Name']}} 
-                      <br> 
+                      <div style="height : 40px;">
+                          {{$product['Name']}} 
+                          
+                        </div>   
                     <small class="card-text container" style="color:orange">
                       
                       
