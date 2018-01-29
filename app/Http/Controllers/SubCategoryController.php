@@ -62,6 +62,78 @@ class SubCategoryController extends Controller
 
         
     }
+    elseif(request()->has('star'))
+    {
+        $request = request('star');
+        if($request === 'Above 4')
+        {
+            $product = Product::where('Review','>','4')
+            ->where('SubCategoryId',$id)                
+            ->paginate(12)
+            ->appends('star', request('star')); 
+        }
+        elseif($request === 'Above 3')
+        {
+            $product = Product::where('Review','>','3')
+            
+            ->where('SubCategoryId',$id)
+            ->paginate(12)
+            ->appends('star', request('star'));
+        }
+        elseif($request === 'Above 2')
+        {
+            $product = Product::where('Review','>','2')
+            
+            ->where('SubCategoryId',$id)
+            ->paginate(12)
+            ->appends('star', request('star'));
+        }
+        else
+        {
+            $product = Product::where('Review','>','1')
+            
+            ->where('SubCategoryId',$id)
+            ->paginate(12)
+            ->appends('star', request('star'));
+        }
+    }
+    elseif(request()->has('discount'))
+    {
+        $request = request('discount');
+
+        if($request === 'Above 5%')
+        {
+            $product = Product::where('Discount','>','5')
+            
+            ->where('SubCategoryId',$id)
+            ->paginate(12)
+            ->appends('discount', request('discount'));
+        }
+        elseif($request === 'Above 10%')
+        {
+            $product = Product::where('Discount','>','10')
+            
+            ->where('SubCategoryId',$id)
+            ->paginate(12)
+            ->appends('discount', request('discount'));
+        }
+        elseif($request === 'Above 20%')
+        {
+            $product = Product::where('Discount','>','20')
+            
+            ->where('SubCategoryId',$id)
+            ->paginate(12)
+            ->appends('discount', request('discount'));
+        }
+        else
+        {
+            $product = Product::where('Discount','>','25')
+            
+            ->where('SubCategoryId',$id)
+            ->paginate(12)
+            ->appends('discount', request('discount'));
+        }
+    }
     else{
         $product = Product::where('SubCategoryId',$id)->paginate(12);
     }

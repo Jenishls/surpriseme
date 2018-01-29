@@ -56,7 +56,7 @@ class CategoryController extends Controller
             if($request === 'Under 500')
             {
                 $product = Product::where('Price','<','500')
-                ->where('SubCategoryId',$id)
+                ->where('CategoryId',$id)
                 ->paginate(12)
                 ->appends('filter', request('filter'));
             }
@@ -65,7 +65,7 @@ class CategoryController extends Controller
             {
                 $product = Product::where('Price','>','500')
                 ->where('Price','<','1000')
-                ->where('SubCategoryId',$id)
+                ->where('CategoryId',$id)
                 ->paginate(12)
                 ->appends('filter', request('filter'));
             }
@@ -74,7 +74,7 @@ class CategoryController extends Controller
             {
                 $product = Product::where('Price','>','1000')
                 ->where('Price','<','2000')
-                ->where('SubCategoryId',$id)
+                ->where('CategoryId',$id)
                 ->paginate(12)
                 ->appends('filter', request('filter'));
                 
@@ -84,7 +84,7 @@ class CategoryController extends Controller
             {
                 $product = Product::where('Price','>','2000')
                 ->where('Price','<','5000')
-                ->where('SubCategoryId',$id)
+                ->where('CategoryId',$id)
                 ->paginate(12)
                 ->appends('filter', request('filter'));
             }
@@ -92,7 +92,7 @@ class CategoryController extends Controller
             else
             {
                 $product = Product::where('Price','>','5000')
-                ->where('SubCategoryId',$id)
+                ->where('CategoryId',$id)
                 ->paginate(12)
                 ->appends('filter', request('filter'));
                 
@@ -100,8 +100,81 @@ class CategoryController extends Controller
     
             
         }
-        else{
-            $product = Product::where('SubCategoryId',$id)->paginate(12);
+        elseif(request()->has('star'))
+        {
+            $request = request('star');
+            if($request === 'Above 4')
+            {
+                $product = Product::where('Review','>','4')
+                ->where('CategoryId',$id)                
+                ->paginate(12)
+                ->appends('star', request('star')); 
+            }
+            elseif($request === 'Above 3')
+            {
+                $product = Product::where('Review','>','3')
+                
+                ->where('CategoryId',$id)
+                ->paginate(12)
+                ->appends('star', request('star'));
+            }
+            elseif($request === 'Above 2')
+            {
+                $product = Product::where('Review','>','2')
+                
+                ->where('CategoryId',$id)
+                ->paginate(12)
+                ->appends('star', request('star'));
+            }
+            else
+            {
+                $product = Product::where('Review','>','1')
+                
+                ->where('CategoryId',$id)
+                ->paginate(12)
+                ->appends('star', request('star'));
+            }
+        }
+        elseif(request()->has('discount'))
+        {
+            $request = request('discount');
+
+            if($request === 'Above 5%')
+            {
+                $product = Product::where('Discount','>','5')
+                
+                ->where('CategoryId',$id)
+                ->paginate(12)
+                ->appends('discount', request('discount'));
+            }
+            elseif($request === 'Above 10%')
+            {
+                $product = Product::where('Discount','>','10')
+                
+                ->where('CategoryId',$id)
+                ->paginate(12)
+                ->appends('discount', request('discount'));
+            }
+            elseif($request === 'Above 20%')
+            {
+                $product = Product::where('Discount','>','20')
+                
+                ->where('CategoryId',$id)
+                ->paginate(12)
+                ->appends('discount', request('discount'));
+            }
+            else
+            {
+                $product = Product::where('Discount','>','25')
+                
+                ->where('CategoryId',$id)
+                ->paginate(12)
+                ->appends('discount', request('discount'));
+            }
+        }
+        else
+        {
+            $product = Product::where('CategoryId',$id)->paginate(12);
         }
         
 
@@ -110,6 +183,10 @@ class CategoryController extends Controller
         $subCategory = SubCategory::all();
         
         $new = Product::orderBy('created_at','desc')->take(10)->get();
+        $userChoice = Product::where('Review','>','3')
+        // ->where('CategoryId',$id)
+        ->take(10)
+        ->get();
         // $posts = Post::orderBy('created_at','desc')->paginate(10);
         
         $data = array(
@@ -118,7 +195,8 @@ class CategoryController extends Controller
             'allCategory' => $allCategory,
             'subCategory' => $subCategory,
             'new' => $new,
-            'pageSubCategory' => ""
+            'pageSubCategory' => "",
+            'userChoice' => $userChoice
         );
         return view('pages.category')->with($data);
     }

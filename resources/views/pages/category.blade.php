@@ -104,43 +104,51 @@
             <button class="accordion">Filter by Customer Review</button>
           <div class="panel">
             <ul style="list-style-type:none">
-              <li>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star-o"></i>
-                
-                 & above
-              </li>
+              <a href="?star=Above 4">
+                <li>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star-o"></i>
+                  
+                  & above
+                </li>
+              </a>
+
+              <a href="?star=Above 3">
+                <li>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star-o"></i>
+                  <i class="fa fa-star-o"></i>
+                  
+                  & above
+                </li>
+              </a>
               
-              <li>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star-o"></i>
-                <i class="fa fa-star-o"></i>
-                
-                 & above
-              </li>
+              <a href="?star=Above 2">
+                <li>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star-o"></i>
+                  <i class="fa fa-star-o"></i>
+                  <i class="fa fa-star-o"></i>
+                  & above
+                </li>
+              </a>
               
-              <li>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star-o"></i>
-                <i class="fa fa-star-o"></i>
-                <i class="fa fa-star-o"></i>
-                & above
-              </li>
-  
-              <li>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star-o"></i>
-                <i class="fa fa-star-o"></i>
-                <i class="fa fa-star-o"></i>
-                <i class="fa fa-star-o"></i>
-                & above
-              </li>
+              <a href="?star=Above 1">
+                <li>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star-o"></i>
+                  <i class="fa fa-star-o"></i>
+                  <i class="fa fa-star-o"></i>
+                  <i class="fa fa-star-o"></i>
+                  & above
+                </li>
+              </a>
   
              
             </ul>
@@ -149,10 +157,10 @@
           <button class="accordion">Discount</button>
           <div class="panel">
             <ul>
-              <li>5% off or More</li>
-              <li>10% off or More</li>
-              <li>20% off or More</li>
-              <li>25% off or More</li>
+              <a href="?discount=Above 5">   <li>5% off or More</li>  </a>
+              <a href="?discount=Above 10">   <li>10% off or More</li>  </a>
+              <a href="?discount=Above 20">   <li>20% off or More</li>  </a>
+              <a href="?discount=Above 25">   <li>25% off or More</li>  </a>
             </ul>
           </div>
         </div>      
@@ -169,10 +177,68 @@
               <div class="col-lg-4 col-md-1 product">
                 <div class="card">
                   <img class="card-img-top" src="{{ asset('images/'.$product->Image) }}" alt="images/{{$product['Image']}}">
-                  <div class="card-block" style=" height: 80px; ">
-                    <p class="card-text container">{{$product['Name']}}<br>{{$category['CategoryName']}}</p>
-                    <p class="card-text container"><i class="fa fa-inr"></i> {{$product['Price']}} </p>
+                  <div class="card-block" style=" height: 100px; ">
+                      {{$product['Name']}} 
+                      <br> 
+                    <small class="card-text container" style="color:orange">
+                      
+                      
+                      
+                      @if($product['Review'] === 1)
+                      
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-o"></i>
+                        <i class="fa fa-star-o"></i>
+                        <i class="fa fa-star-o"></i>
+                        <i class="fa fa-star-o"></i>
+                      
+                      @elseif($product['Review'] === 2)
+                      
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-o"></i>
+                        <i class="fa fa-star-o"></i>
+                        <i class="fa fa-star-o"></i>
+                      
+                      @elseif($product['Review'] === 3)
+                      
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-o"></i>
+                        <i class="fa fa-star-o"></i>
+                      
+                      @elseif($product['Review'] === 4)
+                      
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-o"></i>
+                      
+                      @else
+                      
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                      
+                      @endif
+                      
+                    </small><br>
+                    <small class="card-text container">
+                      @if($product['Discount'] > 0)
+                      <strike><i class="fa fa-inr"></i> {{$product['Price']}}</strike> 
+                      &nbsp;
+                      New Price : 
+                      <i class="fa fa-inr"></i> {{$product['Price']-($product['Price'] * $product['Discount']/100)}}
+                      @else
+                      <i class="fa fa-inr"></i> {{$product['Price']}}
+                      @endif
+                    </small>
                   </div>
+                  
                   <div class="text-center">
                     <p>
                       <a href="#" class="btn btn-sm btn-surprise" role="button"><i class="fa fa-shopping-cart"></i></a>
@@ -236,7 +302,18 @@
     <h4 style="color:orange"><strong>USERS CHOICE</strong></h4>
   </DIV>
       <div class="container showcase" style="background-color:#ccc" >
-  
+          {{--  <div class="autoplay slider">
+        
+              @if(count($userChoice) > 0)
+                @foreach($userChoice as $user)
+                <div>
+                  <img src= "{{ asset('images/'.$user->Image) }}" >
+                  
+                  
+                </div>
+                @endforeach 
+                @endif
+            </div>  --}}
         
     </div>
     <hr>
