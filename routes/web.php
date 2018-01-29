@@ -12,16 +12,32 @@
 */
 
 Route::get('/','PagesController@index' );
-Route::get('/product','PagesController@product' );
+// Route::get('/product','PagesController@product' );
 
-Route::get('category/{category_name?}',[
-    'uses' => 'CategoryController@index',
-    'as' =>'category' ]);
+// Route::get('category/{category_name?}',[
+//     'uses' => 'CategoryController@show',
+//     'as' =>'category' ]);
 
-Route::get('/categories','PagesController@category' );
+// Route::get('/categories','PagesController@category' );
 
 Route::resource('/', 'IndexController');
 Route::resource('product','ProductController');
 
 
 Route::resource('category','CategoryController');
+
+// Route::resource('/subcategory','SubCategoryController');
+
+Route::get('/subcategory/{id}','SubCategoryController@show')->name('subController.show');
+
+Auth::routes();
+Route::get('/home', 'HomeController@index');
+
+
+
+
+
+
+
+
+?>

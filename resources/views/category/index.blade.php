@@ -1,10 +1,13 @@
 @extends('layout.app')
 @section('content')
 
+
+
 <div class="container-fluid ">
     <div class="row" style="background-color: #e9ecef" >
       <div class="col-sm-3 " >
-       <h2 style="line-height: 2em"> Mens</h2>
+       {{--  <h2 style="line-height: 2em">{{$category_name}}</h2>  --}}
+      
       </div>
       <div class="col-sm-2" >
         
@@ -19,7 +22,8 @@
       <div class="col-sm-3  " style=" ">
         <ol class="breadcrumb" style="margin-top: 10px; " >
           <li class="breadcrumb-item"><a href="surpriseme.html">Home</a></li>
-          <li class="breadcrumb-item"><a href="#">Mens</a></li>
+          <li class="breadcrumb-item"><a href="#">Category</a></li>
+          {{--  <li class="breadcrumb-item"><a href="#">{{$category_name}}</a></li>  --}}
         </ol>
       </div>
     </div>

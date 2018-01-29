@@ -6,12 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
       
-   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+  
+   <link href="{{ asset('css/style.css') }}" rel="stylesheet">
 
-   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css"/>
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css"/>
-
+  <link rel="stylesheet" type="text/css" href="{{ asset('css/app.css') }}">
 
 
 
@@ -44,7 +44,7 @@
 
  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.js"></script>
  <script src="https://use.fontawesome.com/85bd2382ad.js"></script>
- <script src="js/style.js"></script>
+ <script src="{{ asset('js/style.js') }}"></script>
  
   </body>
 </html>

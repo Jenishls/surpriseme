@@ -23,6 +23,7 @@ class IndexController extends Controller
         $cat4 = IndexCat::find(4);
         $products = Product::all();
         
+        
     
  
         $data = array(

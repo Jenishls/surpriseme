@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Product;
+use App\Supplier;
 
 class ProductController extends Controller
 {
@@ -13,8 +15,8 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $women="sdfsdfsdf";
-        return view('pages.product')->with('women', $women);
+        // $women="sdfsdfsdf";
+        // return view('pages.product')->with('women', $women);
     }
 
     /**
@@ -46,7 +48,17 @@ class ProductController extends Controller
      */
     public function show($id)
     {
-        //
+        // $product = Product::find($id);
+        $product = Product::where('ProductId', $id)->first();
+        $supplier = Supplier::where('SupplierId',$product['SupplierId'])->first();
+        $related = Product:: all(); 
+        $data = array(
+            'product' => $product,
+            'related' => $related,
+            'supplier' => $supplier
+        );
+
+        return view('pages.product')->with($data);
     }
 
     /**

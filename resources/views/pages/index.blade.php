@@ -59,7 +59,7 @@
       
   	<div class="col-md-6 ">
       
-        <a href="/category/Women">
+        <a href="/category/2">
           
             <img src="images/{{$cat1['Image']}}" class="img-responsive" style="height:100%; width:100%">
         
@@ -69,7 +69,7 @@
     
 
   	<div class="col-md-6 ">
-      <a href="/category/Men">
+      <a href="/category/1">
   		<img src="images/{{$cat2['Image']}}" class="img-responsive" style="height:100%; width:100%">
       </a>
   		</div>
@@ -79,12 +79,12 @@
 
   	<div class="row">
       <div class="col-md-8  ">
-          <a href="/category/Kids">
+          <a href="/category/3">
             <img src="images/{{$cat3['Image']}}" style="width:100%; height:100%">
           </a>
       </div>
       <div class="col-md-4"  >
-        <a href="/category/Others">
+        <a href="/category/4">
           <img src="images/{{$cat4['Image']}}" class="img-responsive" style="width:100%; height:100%"> 
         </a>  
       </div>
@@ -112,7 +112,7 @@
         <div class="card">
           <img class="card-img-top" src="images/{{$product['Image']}}" alt="images/{{$product['Image']}}">
           <div class="card-block" style=" height: 80px; ">
-            <p class="card-text container">{{$product['Description']}}</p>
+            <p class="card-text container">{{$product['Name']}}</p>
           </div>
           <div class="text-center">
             <p>

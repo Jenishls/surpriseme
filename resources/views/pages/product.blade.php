@@ -3,26 +3,27 @@
 
 <div class="container" style="margin-top: 25px; background-color: #dee">
     <div class="row">
+     
+      
       <div class=" card col-lg-6 col-md-1">
-       
-        <img class="card-img" src="images/men.jpeg" alt="Card image cap">
+        <img class="card-img" src= "{{ asset('images/'.$product->Image) }}" alt="Card image cap">
       </div>
       
       <div class="col-lg-6 col-md-1" style="padding: 25px;">
   
-        <h4 >Product Name</h4>
+        <h4 >{{$product['Name']}}</h4>
         <table>
           <tr>
   
             <td><h6 style="color: #aaa">Product code:</h6></td>
-            <td><h6 style="color: #f60"><strong>w232</strong></h6></td>
+            <td><h6 style="color: #f60"><strong>{{$product['ProductId']}}</strong></h6></td>
   
           </tr>
   
           <tr>
             
             <td><h6 style="color: #aaa">Supplier:</h6></td>
-            <td><h6 style="color: #f60"><strong>Traders</strong></h6></td>
+            <td><h6 style="color: #f60"><strong>{{$supplier['FirstName']}}</strong></h6></td>
   
   
           </tr>
@@ -30,7 +31,17 @@
            <tr>
             
             <td><h6 style="color: #aaa">Availablity:</h6></td>
-            <td><h6 style="color: #f60"><strong>Yes</strong></h6></td>
+            <td><h6 style="color: #f60">
+              <strong>
+                
+                @if($product['Quantity'] > 0)
+                  Yes
+                @else 
+                  No 
+
+                @endif
+              </strong>
+            </h6></td>
   
   
           </tr>
@@ -38,16 +49,14 @@
           <tr>
           
             <td><h6 style="color: #aaa">Price: </h6></td>
-            <td><h6 style="color: #f60"><i class="fa fa-inr"></i>&nbsp;<strong>500</strong></h6></td>
+            <td><h6 style="color: #f60"><i class="fa fa-inr"></i>&nbsp;<strong>{{$product['Price']}}</strong></h6></td>
   
           
           </tr>
         </table>
         <p>
-        Reading is easier, too, in the new Reading view. You can collapse parts of the document and focus on the text you want. If you need to stop reading before you reach the end, Word remembers where you left off - even on another device.
-  
-  
-      </p>
+          {{$product['Description']}}
+        </p>
   
         <div class="row text-center">
           
@@ -76,6 +85,7 @@
         </div>
   
       </div>
+     
     </div>
   
    
@@ -87,14 +97,25 @@
   <div class="container showcase" style="background-color:#dee; padding-top: 5px; margin-top: 25px;" >
     <div class="container" style="margin: 10px; color: #f60">
       <h3><strong>Related Products</strong></h3>
+      <div class="autoplay slider">
+        
+          @if(count($related) > 0)
+            @foreach($related as $foo)
+            <div>
+              <img src= "{{ asset('images/'.$foo->Image) }}" >
+              
+            </div>
+            @endforeach 
+            @endif
+        </div>
     </div>  
-       @include('inc.slider')
+      
     </div>
   
   <p><br></p>
   <div class="tab text-center container">
-    <button class="tablinks col-sm-6 col-md-6" onclick="openTab(event, 'description')" > Description</button>
-    <button class="tablinks col-sm-6 col-md-6" onclick="openTab(event, 'reviews')">Reviews</button>
+    <button class="tablinks col-sm-6 col-md-6" onmouseover="openTab(event, 'description')" > Description</button>
+    <button class="tablinks col-sm-6 col-md-6" onmouseover="openTab(event, 'reviews')">Reviews</button>
    
   </div>
   
