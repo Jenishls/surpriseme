@@ -109,7 +109,7 @@
         
       
       <div class="col-lg-3 col-md-1 product">
-        <div class="card">
+        <div class="card hover-shadow">
           <img class="card-img-top" src="{{ asset('images/'.$product->Image) }}" alt="images/{{$product['Image']}}">
           <div class="card-block" style=" height: 100px; ">
             <div style="height : 40px;">
