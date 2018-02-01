@@ -32,7 +32,7 @@
 
 
     <DIV class="container">
-  <h4 style="color:orange"><strong>NEW ARRIVALS</strong></h4>
+  <h4  style="color:orange"><strong>NEW ARRIVALS</strong></h4>
 </DIV>
     <div class="container showcase" style="background-color:#ccc" >
 

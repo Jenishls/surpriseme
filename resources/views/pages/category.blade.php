@@ -18,7 +18,7 @@
       </div>
       <div class="col-sm-3  " style=" ">
         <ol class="breadcrumb" style="margin-top: 10px; " >
-          <li class="breadcrumb-item"><a href="surpriseme.html">Home</a></li>
+          <li class="breadcrumb-item"><a href="/">Home</a></li>
           <li class="breadcrumb-item"><a href="/category/{{$category['CategoryId']}}">{{$category['CategoryName']}}</a></li>
           @if($pageSubCategory != null)
           <li class="breadcrumb-item"><a href="/subcategory/{{$pageSubCategory['CategoryId']}}">{{$pageSubCategory['SubCategoryName']}}</a></li>
