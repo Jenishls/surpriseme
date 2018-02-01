@@ -198,6 +198,7 @@ class CategoryController extends Controller
             'pageSubCategory' => "",
             'userChoice' => $userChoice
         );
+    
         return view('pages.category')->with($data);
     }
 
