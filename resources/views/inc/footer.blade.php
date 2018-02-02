@@ -12,10 +12,10 @@
 
       <div class="col-lg-3 col-md-1">
          <h4><strong>Categories</strong></h4>
-        Men<br>
-        Women<br>
-        Kids<br>
-        +Many More...
+        <a href="/category/1" class="links">Men</a><br>
+        <a href="/category/2" class="links">Women</a><br>
+        <a href="/category/3" class="links">Kids</a><br>
+        <a href="/category/4" class="links">+Many More...</a>
       </div>
       
       <div class="col-lg-3 col-md-1">
