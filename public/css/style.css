@@ -200,3 +200,21 @@ i
   a.links{
       color:white;
   }
+
+  div.navbar-second{
+      background-color: rgb(206, 135, 53);
+    }
+
+    .nav-link
+    {
+      padding: 0px 10px !important;
+      float:right !important;
+    }
+    .nav-link:hover{
+        background-color: #f60 !important; 
+        
+    }
+    .sub-nav-link:hover{
+        background-color: #fa762f;
+
+    }
