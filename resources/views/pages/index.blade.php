@@ -175,15 +175,29 @@
             </small>
           </div>
           
-          <div class="text-center">
             <p>
-              <a href="#" class="btn btn-sm btn-surprise" role="button"><i class="fa fa-shopping-cart"></i></a>
-
-              <a href="/product/{{$product['ProductId']}}" class="btn btn-sm btn-surprise" role="button">View</a>
+              
+              <form action="{{route('cart.store')}}" method="POST">
+                  {{ csrf_field() }}
+                  <input type="hidden" name="id" value={{ $product['ProductId']}}>
+                  <input type="hidden" name="name" value={{ $product['Name']}}>
+                  <input type="hidden" name="price" value={{ $product['Price']}}>
+                  <input type="hidden" value="1" name="qty">
+                  <input type="hidden" name="image" value={{ $product['Image']}}>
+    
+                  <button class="btn btn-sm btn-surprise" >
+                    
+                    <i class="fa fa-shopping-cart"></i>
+                  </button>
+                  <a href="/product/{{$product['ProductId']}}" class="btn btn-sm btn-surprise" role="button">View</a>
             
               <a href="#" class="btn btn-sm btn-surprise" role="button"><i class="fa fa-heart"></i></a>
+                </form>
+              
             </p>
-         </div>
+         
+          
+         
         </div>
     </div>
     @endforeach

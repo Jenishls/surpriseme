@@ -14,11 +14,7 @@
 Route::get('/','PagesController@index' );
 // Route::get('/product','PagesController@product' );
 
-// Route::get('category/{category_name?}',[
-//     'uses' => 'CategoryController@show',
-//     'as' =>'category' ]);
 
-// Route::get('/categories','PagesController@category' );
 
 Route::resource('/', 'IndexController');
 Route::resource('product','ProductController');
@@ -29,7 +25,11 @@ Route::resource('category','CategoryController');
 // Route::resource('/subcategory','SubCategoryController');
 
 Route::get('/subcategory/{id}','SubCategoryController@show')->name('subController.show');
-
+Route::get('/cart','CartController@index')->name('cart.index');
+Route::post('/cart','CartController@store')->name('cart.store');
+Route::get('empty','CartController@empty')->name('cart.empty');
+Route::delete('cart/{product}','CartController@destroy')->name('cart.destroy');
+// Route::destroy()->name();
 Auth::routes();
 Route::get('/home', 'HomeController@index');
 

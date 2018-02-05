@@ -30,8 +30,14 @@
       </div>
 
       <div class="nav-link btn" >
-          <a href="#" class=" links navbar-text" role="button"  >
+          <a href="{{ route('cart.index') }}" class=" links navbar-text" role="button"  >
               <i class="fa fa-shopping-cart"></i> Cart
+              @if(Cart::instance('default')->count() > 0)
+                <span class="badge badge-info">
+                  {{ Cart::instance('default')->count() }}
+                </span>
+              @endif
+              
             </a>   
       </div>
 

@@ -57,32 +57,63 @@
         <p>
           {{$product['Description']}}
         </p>
-  
+
+        <form action="{{route('cart.store')}}" method="POST">
+            {{ csrf_field() }}
         <div class="row text-center">
           
           <div class="col-lg-4 col-sm-4" >
           
             Quantity
-            <input type="number" value="1" name="quantity" min="1" max="99" class="form-control">
+            <input type="number" value="1" name="qty" min="1" max="25" class="form-control">
   
           </div>
           
           <div class="col-lg-4 col-sm-4" >
             Size<br>
-            <input type="number" name="quantity" min="36" max="45" value="36" class="form-control">
+            <input type="number" name="q" min="36" max="45" value="36" class="form-control">
           </div>
           
           <!-- <div class="col-lg-4 col-sm-4" style="background-color: green">
             Color
           </div> -->
-      
+          <div class="col-lg-8 py-5">
+          
+              <input type="hidden" name="id" value={{ $product['ProductId']}}>
+              <input type="hidden" name="name" value={{ $product['Name']}}>
+              <input type="hidden" name="price" value={{ $product['Price']}}>
+              
+              <input type="hidden" name="image" value={{ $product['Image']}}>
+
+              <button class="btn-lg btn-surprise " >
+                Add to Cart &nbsp;
+                <i class="fa fa-shopping-cart"></i>
+              </button>
+            
+          </div>
         </div>
+      </form>
   
-        <div class="row" style="margin-top: 20px">
+        {{--  <div class="row" style="margin-top: 20px">
           <div class="col-sm-12 text-center">
-            <button class="btn-lg" style="background-color: #f60; color: white">Add to Cart &nbsp;<i class="fa fa-shopping-cart"></i></button>
+            
+              
+            <form action="{{route('cart.store')}}" method="POST">
+              {{ csrf_field() }}
+              <input type="hidden" name="id" value={{ $product['ProductId']}}>
+              <input type="hidden" name="name" value={{ $product['Name']}}>
+              <input type="hidden" name="price" value={{ $product['Price']}}>
+              <input type="hidden" name="qty" value=1>
+              <input type="hidden" name="image" value={{ $product['Image']}}>
+
+              <button class="btn-lg btn-surprise " >
+                Add to Cart &nbsp;
+                <i class="fa fa-shopping-cart"></i>
+              </button>
+            </form>
+
           </div>    
-        </div>
+        </div>  --}}
   
       </div>
      
