@@ -71,7 +71,7 @@
           
           <div class="col-lg-4 col-sm-4" >
             Size<br>
-            <input type="number" name="q" min="36" max="45" value="36" class="form-control">
+            <input type="number" name="size" min="36" max="45" value="36" class="form-control">
           </div>
           
           <!-- <div class="col-lg-4 col-sm-4" style="background-color: green">

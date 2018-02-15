@@ -14,6 +14,18 @@
             {{ Cart::count() }} item(s) in the cart
             @else
                 <h5 >No items in the cart</h5>
+                <hr/>
+                <h4>Products You May Like</h4>
+                <div class="autoplay slider">
+                    @if(count($products) > 0)
+                    @foreach($products as $foo)
+                    <div>
+                        <img src="images/{{$foo['Image']}}" >
+                    </div>
+                    @endforeach 
+                    @endif
+                </div>
+                
             @endif
             <div class="container">
                 @foreach(Cart::content() as $item)

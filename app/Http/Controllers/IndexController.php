@@ -21,7 +21,9 @@ class IndexController extends Controller
         $cat2 = IndexCat::find(2);
         $cat3 = IndexCat::find(3);
         $cat4 = IndexCat::find(4);
-        $products = Product::all();
+        $products = Product::where('Review','>','3')->take(16)->get();
+
+        $new = Product::orderBy('created_at','desc')->take(10)->get();
         
         
     
@@ -33,7 +35,8 @@ class IndexController extends Controller
             'cat3' => $cat3,
             'cat4' => $cat4,
             'jumbotron' => $jumb,
-            'products' => $products    
+            'products' => $products,
+            'new' => $new    
         );
     
         return view('pages.index')->with($data);

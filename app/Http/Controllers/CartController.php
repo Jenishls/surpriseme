@@ -10,7 +10,14 @@ class CartController extends Controller
 {
     public function index()
     {
-        return view('pages.cart');
+        $products = Product::all();
+
+        $data = array(
+         
+            'products' => $products    
+        );
+
+        return view('pages.cart')->with($data);
     }
 
     public function store(Request $request)

@@ -7,12 +7,13 @@
           style="background-image: url(../../images/{{$key->Image}});
           background-position: 0% 50%;
           background-size: cover;
+         
           background-repeat: no-repeat;">
         
           <!-- Main component for a primary marketing message or call to action -->
 
           <div class="jumbotron container-fluid">
-            <div style="text-shadow: black 0.5em 0.3em 0.3em;">
+            <div >
             <h1>{{$key->Heading}}</h1>
             <div class="row">
               <div class="col-lg-6 col-12" >
@@ -21,7 +22,7 @@
             </div>
           </div>
             <p>
-              <a class="btn btn-lg btn-surprise" href="#" role="button">{{$key->Button}} &raquo;</a>
+              <a class="btn btn-lg btn-surprise" href="#trending" role="button">{{$key->Button}} &raquo;</a>
             </p>
           </div>
           
@@ -40,8 +41,8 @@
       {{--  @include('inc.slider',$products)  --}}
 
       <div class="autoplay slider">
-        @if(count($products) > 0)
-          @foreach($products as $foo)
+        @if(count($new) > 0)
+          @foreach($new as $foo)
           <div>
             <img src="images/{{$foo['Image']}}" >
           </div>
@@ -97,7 +98,7 @@
 <hr>
 
 <div class="container alert alert-secondary" style="margin-top: 50px;"> 
-  <h2 style=" font-size: 44px; color: #ff6600; margin: 25px;">
+  <h2 style=" font-size: 44px; color: #ff6600; margin: 25px;" id="trending">
     <strong>Trending Products</strong>
     
   </h2>
