@@ -11,13 +11,15 @@
   </div>
   
   <div class="col-sm-7">
-    
+    <form action="{{route ('search.show')}}" method="POST">
+        {{ csrf_field() }}
     <div class="input-group">
-      <input type="text" class="form-control navbar-text " placeholder="Search for...">
+      <input type="text" class="form-control navbar-text " name="search" placeholder="Search for..." required>
         
-          <button class="btn btn-success " type="button"><strong>Search</strong></button>
+          <button class="btn btn-success"><strong>Search</strong></button>
         
       </div>
+    </form>
     
     </div>
     {{--  <div class="col-sm-1"></div>  --}}
